@@ -1,5 +1,8 @@
+#include <stdio.h>
+
 #include "test.h"
 
 int main() {
-	add(4, 5);
+	int x = add(4, 5);
+	printf("result is %d\n", x);
 }
