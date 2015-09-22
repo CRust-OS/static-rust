@@ -21,5 +21,7 @@ clibs := -ldl -lpthread -lgcc_eh -lrt -lc -lm
 
 target:
 	rustc $(Zflags) $(filename) -o $(rslib_output)
-	gcc test.c $(rslib_output) -o $(output) $(clibs) $(ldlibs)
+	gcc -static test.c $(rslib_output) -o $(output) $(clibs) $(ldlibs)
 
+clean:
+	rm $(rslib_output) $(output)
